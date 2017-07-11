@@ -53,6 +53,9 @@ public class UserController  {
             userService.update(user);
         }else{
             //新增用户
+            if("".equalsIgnoreCase((user.getId()))){
+                user.setId(null);
+            }
             userService.save(user);
 
         }
